@@ -10,11 +10,33 @@
 
 # Click-Ripple-Effect
 A Web Effect Project that shows how a click ripple effect can be designed.<br />
-basically, at the point of the click, a 100px by 100px white element(span element) <br />
+in this case, when any part of a button is clicked, a click ripple effect is activated. <br/>
+
+basically, at the point of the click of the element, in this case, the button element, <br />
+a 100px by 100px white circle element(span element) is positioned. <br />
 then over the time span of 0.5 seconds, two things happen simultaneously. <br />
-- one, it is made to transition to a scale of three times its size <br />
+- one, it is made to transition from a scale of 0 to a scale three times its size <br />
 - two, it is made to transition to an opacity of 0 i.e transparent <br />
 After this, the element is removed.
 <br />
-One important thing that must be done is that the element that is clicked in this case the button element <br />
-must have its overflow property set to hidden. this completes the visually appealing effect <br />
+
+A key component to activating this effect is that <br />
+the element that is clicked in this case the button element <br />
+must have its overflow property set to hidden. <br />
+this causes any child element which overflows to be hidden. <br />
+by the time the circle element scales, when it overflows, it will be hidden.
+
+# Positioning the circle Element
+The circle element is created and positioned by the javascript code. <br />
+it is placed as the child of the button element and must be positioned with reference to the button element <br />
+so that when it scales and overflows, the part of the circle element that overflows will be hidden. <br />
+
+to position the circle Element at the point at which the button element was clicked, <br/>
+we make use of two sets of properties:
+- `pageX & pageY`
+- `offsetTop & offsetLeft`
+
+<img src="./ReadMe-Images/ripple-effect.png" style="width:600px; height:auto" alt="javascript for the ripple effect">
+
+pageX & pageY returns the position of the clicked point relative to the viewpoint.
+offsetTop & offsetLeft return the position of the clicked element relative to the viewport.
