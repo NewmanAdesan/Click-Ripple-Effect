@@ -17,3 +17,9 @@ button.addEventListener("click", (e) => {
     setInterval(() => circle.remove(), 500);
 
 })
+
+
+/* Project Info Close Button */
+document.getElementById("project-close").addEventListener("click", () => {
+    document.getElementById("project-info").style.display = "none";
+})
